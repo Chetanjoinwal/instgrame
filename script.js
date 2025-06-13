@@ -172,6 +172,13 @@ postsContent.forEach((post) => {
 
 
 // double click like 
-$("article.post .post__content").dblClick(function(){
-$(this).find('.post__footer button.post__button svg').attr('fill' , 'red');
+$("article.post .post__content").dblclick(function(){
+  var heartSvg = $(this).closest("article.post").find(".post__footer .post__button:first svg");
+  heartSvg.toggleClass("liked");
+
+  if (heartSvg.hasClass("liked")) {
+    heartSvg.find("path").css("fill", "red");
+  } else {
+    heartSvg.find("path").css("fill", "none");
+  }
 });
