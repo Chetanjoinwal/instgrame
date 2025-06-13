@@ -169,3 +169,9 @@ postsContent.forEach((post) => {
     }
   }
 });
+
+
+// double click like 
+$("article.post .post__content").dblClick(function(){
+$(this).find('.post__footer button.post__button svg').attr('fill' , 'red');
+});
